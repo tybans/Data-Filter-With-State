@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useState } from 'react';
+import FilteredUsers from './FilteredUsers';
 
 function App() {
+
+  const [UserList, setUserList] = useState([
+    {
+      id: 1,
+      name: "Taiyab"
+    },
+    {
+      id: 2,
+      name: "Abhishek"
+    },
+    {
+      id: 3,
+      name: "Ravi"
+    },
+    {
+      id:4,
+      name: "Amit"
+    }
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+      <FilteredUsers UserList = {UserList}/>
+    
+    </>
   );
 }
 
